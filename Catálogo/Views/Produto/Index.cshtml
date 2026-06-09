@@ -1,0 +1,22 @@
+@{
+    var produto = ViewBag.Produto as List<string>;
+    var precos = ViewBag.Preco as List<double>;
+}
+
+<table border="1">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Preço</th>
+    </tr>
+    @for (int i = 0; i < produto.Count; i++)
+    {
+        <tr style="color: @(precos[i] < 100 ? "green" : "black")">
+            <td>@(i + 1)</td>
+            <td>@produto[i]</td>
+            <td>R$ @precos[i]</td>
+        </tr>
+    }
+</table>
+
+<p>Total: @produto.Count produto</p>

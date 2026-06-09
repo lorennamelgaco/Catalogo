@@ -1,0 +1,26 @@
+@{
+    var Produto = (ViewBag.Produto as List<string>)!;
+    var Preco = (ViewBag.Preco as List<double>)!;
+}
+
+<h2>Produto</h2>
+
+<table border="1">
+    <tr>
+        <th>LuckStrike</th>
+        <th>Malboro</th>
+        <th>Gift</th>
+        <th>Eight</th>
+    </tr>
+
+    @for (int i = 0; i < Produto.Count; i++)
+    {
+        var nota = Preco[i];
+
+        <tr>
+            <td>@Produto[i]</td>
+            <td>@Preco</td>
+
+        </tr>
+    }
+</table>
